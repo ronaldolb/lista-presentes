@@ -1,0 +1,10 @@
+@use 'variables' as *;
+
+// Mixin de breakpoint (mobile first).
+@mixin a-partir-de($tamanho) {
+  @if $tamanho == tablet {
+    @media (min-width: $bp-tablet) { @content; }
+  } @else if $tamanho == desktop {
+    @media (min-width: $bp-desktop) { @content; }
+  }
+}
