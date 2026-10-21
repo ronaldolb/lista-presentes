@@ -1,0 +1,44 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 15px;
+
+  @include a-partir-de(tablet) {
+    font-size: 16px;
+  }
+}
+
+body {
+  background: $cor-fundo;
+  color: $cor-texto;
+  font-family: $fonte-base;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $fonte-titulo;
+  font-weight: normal;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+// Foco visível para navegação por teclado (acessibilidade).
+:focus-visible {
+  outline: 2px solid #b0636e;
+  outline-offset: 2px;
+}
